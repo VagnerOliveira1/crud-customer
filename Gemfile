@@ -38,7 +38,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'paper_trail'
 gem 'devise'
 gem 'tty-spinner'
-gem 'webpacker'
 
 
 group :development, :test do
