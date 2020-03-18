@@ -7,24 +7,34 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   </head>
 
   <body>
+
+    
+    <div class="container">
+    <br>
+    <div class="row">
+    <div class="col-xs-12 col-md-8"></div>
+        <%if user_signed_in? %>
+          <div class="col-xs-3 col-md-2"><%= link_to 'FAZER AUDITORIA', customers_history_path %> </div>
+          <div class="col-xs-3 col-md-2"><%= link_to 'SAIR', destroy_user_session_path, method: :delete %> </div>
+
+         <% end %>
+    </div>
+    
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <% if user_signed_in? %>
-      Logado como: <strong><%= current_user.email %></strong>.
-        <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-          <%= link_to "Registrar-se", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
+    
     <%= yield %>
+    
+    <div>
     <p class="navbar-text float-right">
 
   </body>

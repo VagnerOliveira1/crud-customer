@@ -1,7 +1,7 @@
 
 <h1>Customers</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,9 +15,9 @@
       <tr>
         <td><%= customer.name %></td>
         <td><%= customer.address %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', customer ,class:" btn btn-light"%></td>
+        <td><%= link_to 'Editar', edit_customer_path(customer) ,class:"btn btn-warning"%></td>
+        <td><%= link_to 'Apagar', customer, method: :delete,class:"btn btn-danger" ,data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'Novo Customer', new_customer_path, class:"btn btn-info" %>
